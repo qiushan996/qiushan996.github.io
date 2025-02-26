@@ -483,4 +483,448 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!target) return
 
         e.preventDefault()
-        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(target.getAttribute('href')).replace('#', ''))),
+        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(target.getAttribute('href')).replace('#', ''))), 300)
+        if (window.innerWidth < 900) {
+          $cardTocLayout.classList.remove('open')
+        }
+      }
+
+      btf.addEventListenerPjax($cardToc, 'click', tocItemClickFn)
+
+      autoScrollToc = item => {
+        const sidebarHeight = $cardToc.clientHeight
+        const itemOffsetTop = item.offsetTop
+        const itemHeight = item.clientHeight
+        const scrollTop = $cardToc.scrollTop
+        const offset = itemOffsetTop - scrollTop
+        const middlePosition = (sidebarHeight - itemHeight) / 2
+
+        if (offset !== middlePosition) {
+          $cardToc.scrollTop = scrollTop + (offset - middlePosition)
+        }
+      }
+
+      // 處理 hexo-blog-encrypt 事件
+      $cardToc.style.display = 'block'
+    }
+
+    // find head position & add active class
+    const $articleList = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    let detectItem = ''
+
+    const findHeadPosition = top => {
+      if (top === 0) return false
+
+      let currentId = ''
+      let currentIndex = ''
+
+      for (let i = 0; i < $articleList.length; i++) {
+        const ele = $articleList[i]
+        if (top > btf.getEleTop(ele) - 80) {
+          const id = ele.id
+          currentId = id ? '#' + encodeURI(id) : ''
+          currentIndex = i
+        } else {
+          break
+        }
+      }
+
+      if (detectItem === currentIndex) return
+
+      if (isAnchor) btf.updateAnchor(currentId)
+
+      detectItem = currentIndex
+
+      if (isToc) {
+        $cardToc.querySelectorAll('.active').forEach(i => i.classList.remove('active'))
+
+        if (currentId) {
+          const currentActive = $tocLink[currentIndex]
+          currentActive.classList.add('active')
+
+          setTimeout(() => autoScrollToc(currentActive), 0)
+
+          if (!isExpand) {
+            let parent = currentActive.parentNode
+            while (!parent.matches('.toc')) {
+              if (parent.matches('li')) parent.classList.add('active')
+              parent = parent.parentNode
+            }
+          }
+        }
+      }
+    }
+
+    // main of scroll
+    const tocScrollFn = btf.throttle(() => {
+      const currentTop = window.scrollY || document.documentElement.scrollTop
+      if (isToc && GLOBAL_CONFIG.percent.toc) {
+        $tocPercentage.textContent = btf.getScrollPercent(currentTop, $article)
+      }
+      findHeadPosition(currentTop)
+    }, 100)
+
+    btf.addEventListenerPjax(window, 'scroll', tocScrollFn, { passive: true })
+  }
+
+  const handleThemeChange = mode => {
+    const globalFn = window.globalFn || {}
+    const themeChange = globalFn.themeChange || {}
+    if (!themeChange) {
+      return
+    }
+
+    Object.keys(themeChange).forEach(key => {
+      const themeChangeFn = themeChange[key]
+      if (['disqus', 'disqusjs'].includes(key)) {
+        setTimeout(() => themeChangeFn(mode), 300)
+      } else {
+        themeChangeFn(mode)
+      }
+    })
+  }
+
+  /**
+   * Rightside
+   */
+  const rightSideFn = {
+    readmode: () => { // read mode
+      const $body = document.body
+      const newEle = document.createElement('button')
+
+      const exitReadMode = () => {
+        $body.classList.remove('read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', exitReadMode)
+      }
+
+      $body.classList.add('read-mode')
+      newEle.type = 'button'
+      newEle.className = 'fas fa-sign-out-alt exit-readmode'
+      newEle.addEventListener('click', exitReadMode)
+      $body.appendChild(newEle)
+    },
+    darkmode: () => { // switch between light and dark mode
+      const willChangeMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+      if (willChangeMode === 'dark') {
+        btf.activateDarkMode()
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+      } else {
+        btf.activateLightMode()
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+      }
+      btf.saveToLocal.set('theme', willChangeMode, 2)
+      handleThemeChange(willChangeMode)
+    },
+    'rightside-config': item => { // Show or hide rightside-hide-btn
+      const hideLayout = item.firstElementChild
+      if (hideLayout.classList.contains('show')) {
+        hideLayout.classList.add('status')
+        setTimeout(() => {
+          hideLayout.classList.remove('status')
+        }, 300)
+      }
+
+      hideLayout.classList.toggle('show')
+    },
+    'go-up': () => { // Back to top
+      btf.scrollToDest(0, 500)
+    },
+    'hide-aside-btn': () => { // Hide aside
+      const $htmlDom = document.documentElement.classList
+      const saveStatus = $htmlDom.contains('hide-aside') ? 'show' : 'hide'
+      btf.saveToLocal.set('aside-status', saveStatus, 2)
+      $htmlDom.toggle('hide-aside')
+    },
+    'mobile-toc-button': (p, item) => { // Show mobile toc
+      const tocEle = document.getElementById('card-toc')
+      tocEle.style.transition = 'transform 0.3s ease-in-out'
+
+      const tocEleHeight = tocEle.clientHeight
+      const btData = item.getBoundingClientRect()
+
+      const tocEleBottom = window.innerHeight - btData.bottom - 30
+      if (tocEleHeight > tocEleBottom) {
+        tocEle.style.transformOrigin = `right ${tocEleHeight - tocEleBottom - btData.height / 2}px`
+      }
+
+      tocEle.classList.toggle('open')
+      tocEle.addEventListener('transitionend', () => {
+        tocEle.style.cssText = ''
+      }, { once: true })
+    },
+    'chat-btn': () => { // Show chat
+      window.chatBtnFn()
+    },
+    translateLink: () => { // switch between traditional and simplified chinese
+      window.translateFn.translatePage()
+    }
+  }
+
+  document.getElementById('rightside').addEventListener('click', e => {
+    const $target = e.target.closest('[id]')
+    if ($target && rightSideFn[$target.id]) {
+      rightSideFn[$target.id](e.currentTarget, $target)
+    }
+  })
+
+  /**
+   * menu
+   * 側邊欄sub-menu 展開/收縮
+   */
+  const clickFnOfSubMenu = () => {
+    const handleClickOfSubMenu = e => {
+      const target = e.target.closest('.site-page.group')
+      if (!target) return
+      target.classList.toggle('hide')
+    }
+
+    const menusItems = document.querySelector('#sidebar-menus .menus_items')
+    menusItems && menusItems.addEventListener('click', handleClickOfSubMenu)
+  }
+
+  /**
+   * 手机端目录点击
+   */
+  const openMobileMenu = () => {
+    const toggleMenu = document.getElementById('toggle-menu')
+    if (!toggleMenu) return
+    btf.addEventListenerPjax(toggleMenu, 'click', () => { sidebarFn.open() })
+  }
+
+  /**
+ * 複製時加上版權信息
+ */
+  const addCopyright = () => {
+    const { limitCount, languages } = GLOBAL_CONFIG.copyright
+
+    const handleCopy = (e) => {
+      e.preventDefault()
+      const copyFont = window.getSelection(0).toString()
+      let textFont = copyFont
+      if (copyFont.length > limitCount) {
+        textFont = `${copyFont}\n\n\n${languages.author}\n${languages.link}${window.location.href}\n${languages.source}\n${languages.info}`
+      }
+      if (e.clipboardData) {
+        return e.clipboardData.setData('text', textFont)
+      } else {
+        return window.clipboardData.setData('text', textFont)
+      }
+    }
+
+    document.body.addEventListener('copy', handleCopy)
+  }
+
+  /**
+   * 網頁運行時間
+   */
+  const addRuntime = () => {
+    const $runtimeCount = document.getElementById('runtimeshow')
+    if ($runtimeCount) {
+      const publishDate = $runtimeCount.getAttribute('data-publishDate')
+      $runtimeCount.textContent = `${btf.diffDate(publishDate)} ${GLOBAL_CONFIG.runtime}`
+    }
+  }
+
+  /**
+   * 最後一次更新時間
+   */
+  const addLastPushDate = () => {
+    const $lastPushDateItem = document.getElementById('last-push-date')
+    if ($lastPushDateItem) {
+      const lastPushDate = $lastPushDateItem.getAttribute('data-lastPushDate')
+      $lastPushDateItem.textContent = btf.diffDate(lastPushDate, true)
+    }
+  }
+
+  /**
+   * table overflow
+   */
+  const addTableWrap = () => {
+    const $table = document.querySelectorAll('#article-container table')
+    if (!$table.length) return
+
+    $table.forEach(item => {
+      if (!item.closest('.highlight')) {
+        btf.wrap(item, 'div', { class: 'table-wrap' })
+      }
+    })
+  }
+
+  /**
+   * tag-hide
+   */
+  const clickFnOfTagHide = () => {
+    const hideButtons = document.querySelectorAll('#article-container .hide-button')
+    if (!hideButtons.length) return
+    hideButtons.forEach(item => item.addEventListener('click', e => {
+      const currentTarget = e.currentTarget
+      currentTarget.classList.add('open')
+      addJustifiedGallery(currentTarget.nextElementSibling.querySelectorAll('.gallery-container'))
+    }, { once: true }))
+  }
+
+  const tabsFn = () => {
+    const navTabsElements = document.querySelectorAll('#article-container .tabs')
+    if (!navTabsElements.length) return
+
+    const setActiveClass = (elements, activeIndex) => {
+      elements.forEach((el, index) => {
+        el.classList.toggle('active', index === activeIndex)
+      })
+    }
+
+    const handleNavClick = e => {
+      const target = e.target.closest('button')
+      if (!target || target.classList.contains('active')) return
+
+      const navItems = [...e.currentTarget.children]
+      const tabContents = [...e.currentTarget.nextElementSibling.children]
+      const indexOfButton = navItems.indexOf(target)
+      setActiveClass(navItems, indexOfButton)
+      e.currentTarget.classList.remove('no-default')
+      setActiveClass(tabContents, indexOfButton)
+      addJustifiedGallery(tabContents[indexOfButton].querySelectorAll('.gallery-container'), true)
+    }
+
+    const handleToTopClick = tabElement => e => {
+      if (e.target.closest('button')) {
+        btf.scrollToDest(btf.getEleTop(tabElement), 300)
+      }
+    }
+
+    navTabsElements.forEach(tabElement => {
+      btf.addEventListenerPjax(tabElement.firstElementChild, 'click', handleNavClick)
+      btf.addEventListenerPjax(tabElement.lastElementChild, 'click', handleToTopClick(tabElement))
+    })
+  }
+
+  const toggleCardCategory = () => {
+    const cardCategory = document.querySelector('#aside-cat-list.expandBtn')
+    if (!cardCategory) return
+
+    const handleToggleBtn = e => {
+      const target = e.target
+      if (target.nodeName === 'I') {
+        e.preventDefault()
+        target.parentNode.classList.toggle('expand')
+      }
+    }
+    btf.addEventListenerPjax(cardCategory, 'click', handleToggleBtn, true)
+  }
+
+  const addPostOutdateNotice = () => {
+    const ele = document.getElementById('post-outdate-notice')
+    if (!ele) return
+
+    const { limitDay, messagePrev, messageNext, postUpdate } = JSON.parse(ele.getAttribute('data'))
+    const diffDay = btf.diffDate(postUpdate)
+    if (diffDay >= limitDay) {
+      ele.textContent = `${messagePrev} ${diffDay} ${messageNext}`
+      ele.hidden = false
+    }
+  }
+
+  const lazyloadImg = () => {
+    window.lazyLoadInstance = new LazyLoad({
+      elements_selector: 'img',
+      threshold: 0,
+      data_src: 'lazy-src'
+    })
+
+    btf.addGlobalFn('pjaxComplete', () => {
+      window.lazyLoadInstance.update()
+    }, 'lazyload')
+  }
+
+  const relativeDate = selector => {
+    selector.forEach(item => {
+      item.textContent = btf.diffDate(item.getAttribute('datetime'), true)
+      item.style.display = 'inline'
+    })
+  }
+
+  const justifiedIndexPostUI = () => {
+    const recentPostsElement = document.getElementById('recent-posts')
+    if (!(recentPostsElement && recentPostsElement.classList.contains('masonry'))) return
+
+    const init = () => {
+      const masonryItem = new InfiniteGrid.MasonryInfiniteGrid('.recent-post-items', {
+        gap: { horizontal: 10, vertical: 20 },
+        useTransform: true,
+        useResizeObserver: true
+      })
+      masonryItem.renderItems()
+      btf.addGlobalFn('pjaxCompleteOnce', () => { masonryItem.destroy() }, 'removeJustifiedIndexPostUI')
+    }
+
+    typeof InfiniteGrid === 'function' ? init() : btf.getScript(`${GLOBAL_CONFIG.infinitegrid.js}`).then(init)
+  }
+
+  const unRefreshFn = () => {
+    window.addEventListener('resize', () => {
+      adjustMenu(false)
+      mobileSidebarOpen && btf.isHidden(document.getElementById('toggle-menu')) && sidebarFn.close()
+    })
+
+    const menuMask = document.getElementById('menu-mask')
+    menuMask && menuMask.addEventListener('click', () => { sidebarFn.close() })
+
+    clickFnOfSubMenu()
+    GLOBAL_CONFIG.islazyloadPlugin && lazyloadImg()
+    GLOBAL_CONFIG.copyright !== undefined && addCopyright()
+
+    if (GLOBAL_CONFIG.autoDarkmode) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (btf.saveToLocal.get('theme') !== undefined) return
+        e.matches ? handleThemeChange('dark') : handleThemeChange('light')
+      })
+    }
+  }
+
+  const forPostFn = () => {
+    addHighlightTool()
+    addPhotoFigcaption()
+    addJustifiedGallery(document.querySelectorAll('#article-container .gallery-container'))
+    runLightbox()
+    scrollFnToDo()
+    addTableWrap()
+    clickFnOfTagHide()
+    tabsFn()
+  }
+
+  const refreshFn = () => {
+    initAdjust()
+    justifiedIndexPostUI()
+
+    if (GLOBAL_CONFIG_SITE.pageType === 'post') {
+      addPostOutdateNotice()
+      GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll('#post-meta time'))
+    } else {
+      GLOBAL_CONFIG.relativeDate.homepage && relativeDate(document.querySelectorAll('#recent-posts time'))
+      GLOBAL_CONFIG.runtime && addRuntime()
+      addLastPushDate()
+      toggleCardCategory()
+    }
+
+    GLOBAL_CONFIG_SITE.pageType === 'home' && scrollDownInIndex()
+    scrollFn()
+
+    forPostFn()
+    GLOBAL_CONFIG_SITE.pageType !== 'shuoshuo' && btf.switchComments(document)
+    openMobileMenu()
+  }
+
+  btf.addGlobalFn('pjaxComplete', refreshFn, 'refreshFn')
+  refreshFn()
+  unRefreshFn()
+
+  // 處理 hexo-blog-encrypt 事件
+  window.addEventListener('hexo-blog-decrypt', e => {
+    forPostFn()
+    window.translateFn.translateInitialization()
+    Object.values(window.globalFn.encrypt).forEach(fn => {
+      fn()
+    })
+  })
+})
