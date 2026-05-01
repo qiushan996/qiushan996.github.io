@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.D9DtNWCE.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.BoZO7eKC.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DJYgOjd1.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.BQxBvvMu.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.D-xHx_Ro.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.CZl2lxwY.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.UzVA7n2e.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DWwE4BPJ.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.UzVA7n2e.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/consumer-to-producer.BL5FkIW5.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从消费者向生产者的转变 - 半亩方塘</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="天风海水，能移我情">
+<meta property="og:description" content="天风海水，能移我情">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="半亩方塘">
+<meta property="og:title" content="从消费者向生产者的转变">
+<meta property="og:image" content="https://img.qiushan.me/2026/05/6348a18288eed2cf7f231cd52e90149f.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://qiushan996.github.io/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.6">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">半亩方塘</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!----></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="/favicon.png" alt="avatar"><span class="site-author-status absolute" title="行到水穷处，坐看云起时">🖋️</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">丘山</a><a href="/about/site" class="site-name text-lg leading-loose">半亩方塘</a><h4 class="site-subtitle block op-70" text="xs">一处安放灵魂的角落</h4><div class="site-description">天风海水，能移我情</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">7</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">2</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">7</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:#333333;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/qiushan996" title="GitHub" target="_blank" style="color:#333333;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://www.douban.com/people/qiushan996/" title="豆瓣" target="_blank" style="color:#333333;"><div class="i-ri-douban-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:me@example.com" title="E-Mail" target="_blank" style="color:#333333;"><div class="i-ri-mail-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/archives/" class="va-link link-item yun-icon-btn" inline-flex title="文章随笔" style="color:#5c2223;"><!--[--><div class="i-ri-article-line icon size-6"></div><!--]--></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类专栏" style="color:#5c2223;"><!--[--><div class="i-ri-folder-2-line icon size-6"></div><!--]--></a><a href="/about/" class="va-link link-item yun-icon-btn" inline-flex title="关于丘山" style="color:#5c2223;"><!--[--><div class="i-ri-ink-bottle-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template></template><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">从消费者向生产者的转变</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-06-15 20:20:05"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-06-15</time></span><!----></div><!--[--><!--]--><div class="inline-flex-center gap-4"><!----><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/%E9%9A%8F%E6%83%B3" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>成长日记 / 随想</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=%E6%84%9F%E6%82%9F" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>感悟</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>自从几年2月份以来，所有的精力都在备考OSCP的证书，参加两次考试都以失败结束。略有沮丧，但仍需努力。记得有句话说的，过分执着、强求或费尽心力去争取某样东西，反而可能适得其反，得不到好的结果。</p><p>或许时候暂停，看看清楚再出发了。打算休息一个月，调整调整准备再战。</p><p>最近也逐渐生出许多新的想法：</p><ul><li>从消费者向生产者转变</li><li>开启一个人的事业</li></ul><h3 id="从消费者向生产者转变" tabindex="-1">从消费者向生产者转变 <a class="header-anchor" href="#从消费者向生产者转变" aria-label="Permalink to &quot;从消费者向生产者转变&quot;">​</a></h3><p><img src="https://img.qiushan.me/2026/05/6348a18288eed2cf7f231cd52e90149f.png" alt="alt text"> 很多人将成功，将努力将奋斗，深一点的将阶级的跃迁。但在我看来一个人正真的觉醒、或者说一个人正真的成长是这一观念的转变：从消费者向生产者过度。某种角度上来讲，这句话过于抽象。但是我向表达的核心的东西是我们应该停止向这个世界索取了，我们已经有意识无意识的，主动的被动的向外索取者，基于人性、基于动物的本能，基于底层次的认知。尤其在这个嘈杂的世界，每个人都在输出着自己的观点，吸引着眼球，赚钱流量获得利益。如果你想成功，成就一番事业，是时候应该停下来想想，你能为他人提供什么，即向这个世界提供什么。如果你能想清楚这一点，并为之努力，相信成功不会很遥远。</p><p>这个观念最近一直在脑海中盘旋。我也在反省自己。我到底能为这个世界提供什么呢？每天刷短视频，每天看那些看似无用实则无用的鸟书到底有什么卵用。</p><p>那么，我能不能自己创作视频呢，我能不能将自己的专业输出为自己的品牌呢，我能不能为脑海中那些不切实际的天马行空的想法付出行动呢。</p><p>这里记录一下最近学到的<strong>费曼学习法</strong>：</p><ul><li>第一步：确定要学习研究的目标并且开始学习</li><li>第二步：开始较别人</li><li>第三步：遇到问题，返回学习</li><li>第四步：重复以上三个步骤，直到完全掌握</li></ul><h3 id="开启一个人的事业" tabindex="-1">开启一个人的事业 <a class="header-anchor" href="#开启一个人的事业" aria-label="Permalink to &quot;开启一个人的事业&quot;">​</a></h3><p><img src="https://img.qiushan.me/2026/05/c39387c8ffd42e3f3200d3607bc1a238.png" alt="alt text"> 以上所有的想法逐渐变的清晰，都指向最后同一个话题：要创建一个人的事业，打造属于一个人的公司。看到很多的案例，很多优秀的人，页很羡慕那些能够以自由职业作为标签的人设和那种自由的人生。或许在那种看似潇洒的生活背后有无数的艰辛和磨难，但这一切的不堪和经历的所有的挫折，在那种对自己的人生具有十足的掌控感的力量面前一切都是值得的。</p><p>相比那些稳定二体面的工作，却一眼看到生活的尽头是在是最无趣的人生。人生一世来此一造，实属不易，且当经历体验、经历感受这世间的一切。</p><p>目前，虽然对于具体做什么还没有考虑的十分清楚，但是有以下几条是必须拿上要开始着手准备的：</p><ul><li>尝试做自己的社交账号，输出自己的内容，以英语为主</li><li>尝试录制网络100系列视频，以最基础的网安知识，加上演示实验，定期更新，输出到B站上试一试水，攒点经验（如何制作教学课程，录制视频，准备课件等）</li><li>着手准备和渗透测试相关的课程，帮助有考证需求的同行进行指导。前提是能够考下来OSCP和CTPS两个证书，并有规划的考OSCE。或许后期的职业生涯会往安全培训方面靠</li><li>尝试以油管为平台，结合AI技术，以介绍中国故事为主要内容进行尝试。</li></ul><p>路漫漫其修远兮，吾将上下而求索。诸多事要做，时不我待。碎碎之念，聊以自慰，聊以自勉。</p><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>丘山</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://qiushan996.github.io/posts/consumer-to-producer" target="_blank" title="本文链接">http://qiushan996.github.io/posts/consumer-to-producer</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><!----></div><div class="post-nav-item"><a href="/posts/four-seasons" class="post-nav-next" title="四季更替是生命最精采的注脚"><span class="title truncate" text="sm">四季更替是生命最精采的注脚</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!----><!--[--><!-- eslint-disable-next-line vue/no-lone-template empty --><template class="mt-4 lg:hidden"></template><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="/about/" target="_blank" title="记录点滴"><div class="i-ri-quill-pen-line"></div></a><span>丘山</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.6</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.6</span></span></div><!--[--><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"http://qiushan996.github.io/#identity","@type":"Person","name":"丘山","url":"http://qiushan996.github.io/","image":{"@id":"http://qiushan996.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://github.com/qiushan996","https://www.douban.com/people/qiushan996/","mailto:me@example.com"]},{"@id":"http://qiushan996.github.io/#website","@type":"WebSite","dateModified":"2025-06-15T20:20:05.000Z","datePublished":"2025-06-15T20:20:05.000Z","inLanguage":"zh-CN","name":"从消费者向生产者的转变","url":"http://qiushan996.github.io/","publisher":{"@id":"http://qiushan996.github.io/#identity"}},{"@id":"http://qiushan996.github.io/#webpage","@type":"WebPage","dateModified":"2025-06-15T20:20:05.000Z","datePublished":"2025-06-15T20:20:05.000Z","description":"天风海水，能移我情","name":"从消费者向生产者的转变","url":"http://qiushan996.github.io/","about":{"@id":"http://qiushan996.github.io/#identity"},"isPartOf":{"@id":"http://qiushan996.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["http://qiushan996.github.io/"]}]},{"@id":"http://qiushan996.github.io/#article","dateModified":"2025-06-15T20:20:05.000Z","datePublished":"2025-06-15T20:20:05.000Z","description":"天风海水，能移我情","headline":"从消费者向生产者的转变","inLanguage":"zh-CN","thumbnailUrl":"https://img.qiushan.me/2026/05/6348a18288eed2cf7f231cd52e90149f.png","@type":["Article","BlogPosting"],"author":{"@id":"http://qiushan996.github.io/#/schema/person/1"},"image":{"@id":"http://qiushan996.github.io/#/schema/image/2"},"isPartOf":{"@id":"http://qiushan996.github.io/#webpage"},"mainEntityOfPage":{"@id":"http://qiushan996.github.io/#webpage"},"publisher":{"@id":"http://qiushan996.github.io/#identity"}},{"@id":"http://qiushan996.github.io/#/schema/person/1","@type":"Person","name":"丘山","url":"https://valaxy.site"},{"@id":"http://qiushan996.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"http://qiushan996.github.io/favicon.png","inLanguage":"zh-CN","url":"http://qiushan996.github.io/favicon.png"},{"@id":"http://qiushan996.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://img.qiushan.me/2026/05/6348a18288eed2cf7f231cd52e90149f.png","inLanguage":"zh-CN","url":"https://img.qiushan.me/2026/05/6348a18288eed2cf7f231cd52e90149f.png"}]}</script>
+  
+</body>
+</html>

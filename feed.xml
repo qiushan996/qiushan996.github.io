@@ -4,7 +4,7 @@
         <title>半亩方塘</title>
         <link>http://qiushan996.github.io/</link>
         <description>天风海水，能移我情</description>
-        <lastBuildDate>Fri, 01 May 2026 18:25:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 May 2026 23:12:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -16,29 +16,29 @@
         <atom:link href="http://qiushan996.github.io/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[从消费者向生产者的转变]]></title>
-            <link>http://qiushan996.github.io/posts/从消费者向生产着的转变</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/从消费者向生产着的转变</guid>
+            <link>http://qiushan996.github.io/posts/consumer-to-producer</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/consumer-to-producer</guid>
             <pubDate>Sun, 15 Jun 2025 20:20:05 GMT</pubDate>
             <content:encoded><![CDATA[<p>自从几年2月份以来，所有的精力都在备考OSCP的证书，参加两次考试都以失败结束。略有沮丧，但仍需努力。记得有句话说的，过分执着、强求或费尽心力去争取某样东西，反而可能适得其反，得不到好的结果。</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/从消费者向生产着的转变" target="_blank">http://qiushan996.github.io/posts/从消费者向生产着的转变</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/consumer-to-producer" target="_blank">http://qiushan996.github.io/posts/consumer-to-producer</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[四季更替是生命最精采的注脚]]></title>
-            <link>http://qiushan996.github.io/posts/四时更替_uploaded</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/四时更替_uploaded</guid>
+            <link>http://qiushan996.github.io/posts/four-seasons</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/four-seasons</guid>
             <pubDate>Sat, 29 Mar 2025 20:20:42 GMT</pubDate>
             <content:encoded><![CDATA[<p>加拿大三月底，又下了一场大雪！<br>
 自去年12月开始，冬天已经快四个月了，漫长的冬天也抵不住时光的悄然而逝。</p>
 <p>感叹的是时隔多年，对冬天，对下雪又了新的感悟。</p>
 <p>记得小时候不是很喜欢冬天，因为一到冬天</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/四时更替_uploaded" target="_blank">http://qiushan996.github.io/posts/四时更替_uploaded</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/four-seasons" target="_blank">http://qiushan996.github.io/posts/four-seasons</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[高山、平原与家]]></title>
-            <link>http://qiushan996.github.io/posts/山与家</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/山与家</guid>
+            <link>http://qiushan996.github.io/posts/mountains-and-home</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/mountains-and-home</guid>
             <pubDate>Fri, 11 Oct 2024 20:50:42 GMT</pubDate>
             <content:encoded><![CDATA[<h3>高山、平原与家</h3>
 <p>小时候，家住在黄土高坡</p>
@@ -48,64 +48,51 @@
 <p>像海浪，像云层</p>
 <p>像一条永远走不完的道</p>
 <p>![](<a href="https://img.qiush">https://img.qiush</a></p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/山与家" target="_blank">http://qiushan996.github.io/posts/山与家</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/mountains-and-home" target="_blank">http://qiushan996.github.io/posts/mountains-and-home</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[三十岁之再出发]]></title>
-            <link>http://qiushan996.github.io/posts/三十岁之再出发</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/三十岁之再出发</guid>
+            <link>http://qiushan996.github.io/posts/restart-at-thirty</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/restart-at-thirty</guid>
             <pubDate>Sat, 27 Jul 2024 08:30:42 GMT</pubDate>
             <content:encoded><![CDATA[<p></p>
 <p><em><strong>我们终于要开始生活了，</strong></em></p>
 <p><em><strong>所谓生活，意思是：</strong></em></p>
 <p><em><strong>去爱，去创造，并最终一起燃烧🔥</strong></em></p>
 <p>这一年，我们完成了最初的计划，在32岁全家来到加拿大开始新的生活。</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/三十岁之再出发" target="_blank">http://qiushan996.github.io/posts/三十岁之再出发</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/restart-at-thirty" target="_blank">http://qiushan996.github.io/posts/restart-at-thirty</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[书法、英语与人生]]></title>
-            <link>http://qiushan996.github.io/posts/书法、英语与人生</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/书法、英语与人生</guid>
+            <link>http://qiushan996.github.io/posts/calligraphy-english-and-life</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/calligraphy-english-and-life</guid>
             <pubDate>Fri, 26 Jul 2024 18:20:42 GMT</pubDate>
             <content:encoded><![CDATA[<p>近来辞职无事，便又捡起断断续续坚持到现在的唯一爱好：写毛笔字。 之所以说是写毛笔字而不是练习书法或者其他更高雅的称呼，是因为一来，我并没有在这一行当中有任何成就。仍是停留在临帖的初级阶段，且</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/书法、英语与人生" target="_blank">http://qiushan996.github.io/posts/书法、英语与人生</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/calligraphy-english-and-life" target="_blank">http://qiushan996.github.io/posts/calligraphy-english-and-life</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[日本自由行日记]]></title>
-            <link>http://qiushan996.github.io/posts/日本游记</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/日本游记</guid>
+            <link>http://qiushan996.github.io/posts/japan-trip</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/japan-trip</guid>
             <pubDate>Fri, 15 Mar 2024 23:10:42 GMT</pubDate>
             <content:encoded><![CDATA[<p>2024年三月初，利用10天的婚假完成人生第一个出国游的目标。以下从出行前的准备、出行的行程安排以及出行过程中的一些观察和感受几个方面回顾并记录此次旅程。</p>
 <h3>1、出行前的准备</h3>
 <p>--</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/日本游记" target="_blank">http://qiushan996.github.io/posts/日本游记</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/japan-trip" target="_blank">http://qiushan996.github.io/posts/japan-trip</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
         <item>
             <title><![CDATA[2023年读书总结]]></title>
-            <link>http://qiushan996.github.io/posts/2023年读书总结</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/2023年读书总结</guid>
+            <link>http://qiushan996.github.io/posts/2023-reading-summary</link>
+            <guid isPermaLink="false">http://qiushan996.github.io/posts/2023-reading-summary</guid>
             <pubDate>Thu, 15 Feb 2024 20:12:00 GMT</pubDate>
             <content:encoded><![CDATA[<h2>1、2023年读书总结</h2>
 <p>2023年陆陆续续也读了大概50来本书（有些未全部读完），主要途径包括：微信读书、Apple阅读、掌阅iReader墨水屏阅读器、纸质书四种方式。</p>
 <p>读书笔记以N</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/2023年读书总结" target="_blank">http://qiushan996.github.io/posts/2023年读书总结</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (丘山)</author>
-        </item>
-        <item>
-            <title><![CDATA[Hello, Valaxy!]]></title>
-            <link>http://qiushan996.github.io/posts/hello-valaxy</link>
-            <guid isPermaLink="false">http://qiushan996.github.io/posts/hello-valaxy</guid>
-            <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h2>Valaxy</h2>
-<p>Next Generation Static Blog Framework.</p>
-<p>Write your first post!</p>
-<h2>Usage</h2>
-<p>Modify `valaxy</p>
-<br/><p>访问 <a href="http://qiushan996.github.io/posts/hello-valaxy" target="_blank">http://qiushan996.github.io/posts/hello-valaxy</a> 阅读全文。</p>]]></content:encoded>
+<br/><p>访问 <a href="http://qiushan996.github.io/posts/2023-reading-summary" target="_blank">http://qiushan996.github.io/posts/2023-reading-summary</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (丘山)</author>
         </item>
     </channel>
