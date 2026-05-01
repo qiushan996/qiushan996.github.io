@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://qiushan996.github.io/sitemap.xml
